@@ -9,7 +9,7 @@ export const headData = {
 
 // HERO DATA
 export const heroData = {
-  title: 'mr.',
+  title: '',
   name: 'Tanaka Gabaza',
   subtitle: '',
   cta: '',
