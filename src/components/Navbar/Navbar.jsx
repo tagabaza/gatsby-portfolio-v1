@@ -16,20 +16,29 @@ const Navigation = () => {
     const showSidebar = () => setSidebar(!sidebar);
 
     //Controls appearance of navbar by scroll on larger screens
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(false);
+    const [scrolling, setScrolling] = useState(false);
+    let prevScollPos = window.scrollY;
     const controlNavbar = () => {
-        if (window.scrollY > 250 ) {
-            setShow(true)
+        let currentScrollPos = window.scrollY;
+        if (prevScollPos > currentScrollPos) {
+            setShow(false)
         }else{
-          setShow(false)
+          setShow(true)
         }
+        if(currentScrollPos > 300){
+            setScrolling(true);
+        }else{
+            setScrolling(false);
+        }
+        prevScollPos = currentScrollPos;
     }
 
-      useEffect(() => {
-          window.addEventListener('scroll', controlNavbar)
+    useEffect(() => {
+       window.addEventListener('scroll', controlNavbar)
           return () => {
-              window.removeEventListener('scroll', controlNavbar)
-          }
+            window.removeEventListener('scroll', controlNavbar)
+        }
       }, [])
     
 
@@ -47,7 +56,7 @@ const Navigation = () => {
       }, []);
     
     return (
-            <nav className={`NavbarItems ${show && 'hidden'}`}>
+            <nav className={`NavbarItems ${show && 'hidden'} ${scrolling && 'scrolling'}`}>
                 <Fade top duration={1000} delay={100} distance="30px">
                     <h1 className="navbar-logo">Tanaka</h1>
                     <div className="menu-icon" onClick={showSidebar}>
