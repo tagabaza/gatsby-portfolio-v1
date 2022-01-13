@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Navbar, Nav, Button} from "react-bootstrap";
 // import { Link } from "gatsby";
 import * as FaIcons from "react-icons/fa";
@@ -11,43 +11,80 @@ import resume from "../../static/resume.pdf"
 
 
 const Navigation = () => {
+    //Controls appearance of sidebar on smaller screens
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
 
+    //Controls appearance of navbar by scroll on larger screens
+    const [show, setShow] = useState(false)
+    const controlNavbar = () => {
+        const lastScroll = window.scrollY;
+        if (window.scrollY >= lastScroll ) {
+            setShow(true)
+        }else{
+            setShow(false)
+        }
+  
+    }
+
+      useEffect(() => {
+          window.addEventListener('scroll', controlNavbar)
+          return () => {
+              window.removeEventListener('scroll', controlNavbar)
+          }
+      }, [])
+    
+
+    const [isDesktop, setIsDesktop] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        if (window.innerWidth > 769) {
+          setIsDesktop(true);
+          setIsMobile(false);
+        } else {
+          setIsMobile(true);
+          setIsDesktop(false);
+        }
+      }, []);
     
     return (
-        
-            //  <Fade top duration={1000} delay={700} distance="30px">
-                <nav className="NavbarItems">
+            <nav className={`NavbarItems ${show && 'hidden'}`}>
+                <Fade top duration={1000} delay={100} distance="30px">
                     <h1 className="navbar-logo">Tanaka</h1>
                     <div className="menu-icon" onClick={showSidebar}>
-                    <FaIcons.FaBars/>
+                        <FaIcons.FaBars/>
                     </div>
+                </Fade>
 
+                <Fade top duration={1000} delay={300} distance="30px">
                     <ul className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                         <li className="navbar-toggle" onClick={showSidebar}>
                             <div className='menu-icon'>
                                 <FaIcons.FaTimes/>
                             </div>
                         </li>
-                        {MenuItems.map((item, index) => {
-                            return(
-                                <li key={index}>
-                                    <Link className={item.cName} to={item.url} smooth duration={1000}>
-                                        {item.title}
-                                    </Link>§
-                                </li>
-                            )
-                        })}
+                        
+                            {MenuItems.map((item, index) => {
+                                return(
+                                    <li key={index}>
+                                        <Link className={item.cName} to={item.url} smooth duration={1000} onClick={showSidebar}>
+                                            {item.title}
+                                        </Link>
+                                        
+                                    </li> 
+                                )
+                             })}
+                        
                     </ul>
+                </Fade>
+                
+                <Fade top duration={1000} delay={500} distance="30px">
                     <span className="resumeBtn cta-btn cta-btn--hero">
                         <a href={resume} target="_blank" rel="noopener noreferrer">RESUME</a>
-              {/* <Link href={resume} smooth duration={1000}>
-                RESUME
-              </Link> */}
-            </span>
-                </nav>
-            // </Fade>
+                    </span>
+                </Fade>
+            </nav>         
     );
 }
 

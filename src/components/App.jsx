@@ -28,7 +28,7 @@ function App() {
 
   return (
     <PortfolioProvider value={{ navigation, hero, about, projects, contact, footer }}>
-      {/* <Navigation /> */}
+      <Navigation />
       <Hero />
       <About />
       <Projects />

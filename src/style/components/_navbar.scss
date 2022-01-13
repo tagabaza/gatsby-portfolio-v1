@@ -3,10 +3,19 @@
 .NavbarItems {
   background-color: #fff;
   height: 80px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  position: fixed;
+  transition: all 0.5s linear;
+  z-index: 10;
+}
+
+.hidden {
+  top: -100%;
+  transition: all 15s ease-out;
 }
 
 .navbar-logo {
@@ -71,6 +80,8 @@
     top: 0;
     opacity: 1;
     transition: all 0.5s ease;
+    margin-top: 0;
+    padding-bottom: 30rem;
   }
 
   .nav-menu.active {
@@ -79,9 +90,9 @@
     margin-top: 0;
     right: 0;
     opacity: 1;
-    padding-bottom: 30rem;
     transition: all 0.5s ease;
     z-index: 1;
+    padding-left: 40px;
   }
 
   .nav-links {
@@ -99,8 +110,8 @@
 
   .navbar-logo {
     position: absolute;
-    left: 0;
-    transform: translate(25%, 50%);
+    left: 1.3rem;
+    top: 2.5rem;
   }
 
   .menu-icon {
