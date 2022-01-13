@@ -19,7 +19,7 @@ export const heroData = {
 export const aboutData = {
   img: 'hero1.jpg',
   paragraphOne: 'Hello! My name is Tanaka and I love creating things for the web. My interest in development started back in 2015 when I was tasked with building an interactive educational game for an IT project at school. Initially I dreaded the thought of working on such a project. However, it turned out that crafting together an application from scratch with various cool features, animations and designs was something that I found very enjoyable and massively rewarding.     ',
-  paragraphTwo: 'Jump to today, I still hold that same love and passion for the craft of development with a Bsc in Computer Science to show for it. My focus right now is on projects that are on the client side and are mainly React led. Although my free time is spent trying to learn Node and Express JS as the long term goal is to become a seasoned full stack developer. ',
+  paragraphTwo: 'Jump to today, I still hold that same love and passion for the craft of development, now with a Bsc in Computer Science to show for it. My focus right now is on projects that are on the client side and are mainly React led. Although my free time is spent trying to learn Node and Express JS as the long term goal is to become a seasoned full stack developer. ',
   paragraphThree: ' ',
   resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
 };
