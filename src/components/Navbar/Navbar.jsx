@@ -11,6 +11,7 @@ import resume from "../../static/resume.pdf"
 
 
 const Navigation = () => {
+
     //Controls appearance of sidebar on smaller screens
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
@@ -18,28 +19,34 @@ const Navigation = () => {
     //Controls appearance of navbar by scroll on larger screens
     const [show, setShow] = useState(false);
     const [scrolling, setScrolling] = useState(false);
-    let prevScollPos = window.scrollY;
-    const controlNavbar = () => {
-        let currentScrollPos = window.scrollY;
-        if (prevScollPos > currentScrollPos) {
-            setShow(false)
-        }else{
-          setShow(true)
-        }
-        if(currentScrollPos > 300){
-            setScrolling(true);
-        }else{
-            setScrolling(false);
-        }
-        prevScollPos = currentScrollPos;
-    }
 
-    useEffect(() => {
-       window.addEventListener('scroll', controlNavbar)
-          return () => {
-            window.removeEventListener('scroll', controlNavbar)
+    const isBrowser = typeof window !== "undefined";
+    if(isBrowser){
+        let prevScollPos = window.scrollY;
+
+        const controlNavbar = () => {
+            let currentScrollPos = window.scrollY;
+            if (prevScollPos > currentScrollPos) {
+                setShow(false)
+            }else{
+              setShow(true)
+            }
+            if(currentScrollPos > 300){
+                setScrolling(true);
+            }else{
+                setScrolling(false);
+            }
+            prevScollPos = currentScrollPos;
         }
-      }, [])
+    
+        useEffect(() => {
+           window.addEventListener('scroll', controlNavbar)
+              return () => {
+                window.removeEventListener('scroll', controlNavbar)
+            }
+          }, [])
+        
+    }
     
 
     const [isDesktop, setIsDesktop] = useState(false);
