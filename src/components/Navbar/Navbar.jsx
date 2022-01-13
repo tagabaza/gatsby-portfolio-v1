@@ -18,13 +18,11 @@ const Navigation = () => {
     //Controls appearance of navbar by scroll on larger screens
     const [show, setShow] = useState(false)
     const controlNavbar = () => {
-        const lastScroll = window.scrollY;
-        if (window.scrollY >= lastScroll ) {
+        if (window.scrollY > 250 ) {
             setShow(true)
         }else{
-            setShow(false)
+          setShow(false)
         }
-  
     }
 
       useEffect(() => {
