@@ -32,7 +32,7 @@ const Projects = () => {
 
             return (
               <Row key={id}>
-                <Col lg={4} sm={12}>
+                <Col className='project-info-container' xl={4} lg={12}>
                   <Fade
                     left={isDesktop}
                     bottom={isMobile}
@@ -44,8 +44,7 @@ const Projects = () => {
                       <h3 className="project-wrapper__text-title">{title || 'Project Title'}</h3>
                       <div>
                         <p>
-                          {info ||
-                            'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi neque, ipsa animi maiores repellendu distinctioaperiam earum dolor voluptatum consequatur blanditiis inventore debitis fuga numquam voluptate architecto itaque molestiae.'}
+                          {info}
                         </p>
                         <p className="mb-4">{info2 || ''}</p>
                       </div>
@@ -71,7 +70,7 @@ const Projects = () => {
                     </div>
                   </Fade>
                 </Col>
-                <Col lg={8} sm={12}>
+                <Col className='project-image-container' xl={8} lg={12} >
                   <Fade
                     right={isDesktop}
                     bottom={isMobile}
