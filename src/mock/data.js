@@ -9,9 +9,9 @@ export const headData = {
 
 // HERO DATA
 export const heroData = {
-  title: 'Hello.',
-  name: 'Tanaka Gabaza',
-  subtitle: 'Frontend Developer',
+  title: 'Hi, my name is',
+  name: 'TANAKA GABAZA',
+  subtitle: 'I create things for the web.',
   cta: 'Learn More',
 };
 
@@ -30,11 +30,20 @@ export const projectsData = [
     id: nanoid(),
     img: 'scrnshtRWA1.jpg',
     title: 'React Weather App',
-    info: 'A web application that uses the MetaWeather API to gather and display weather related information for a location that is entered by a user. Displays max temp, min temp, humidity, predictability as well as the predicted weather the next 5 days in the chosen location.',
+    info: 'A web application that uses the MetaWeather API to gather and display weather related information for a location that is entered by a user. Displays max temp, min temp, humidity, predictability as well as the predicted weather the next 5 days a chosen location.',
     info2: '',
     url: 'https://tagabaza.github.io/react-weather-app/',
     repo: 'https://github.com/tagabaza/react-weather-app', // if no repo, the button will not show up
   },
+  {
+    id: nanoid(),
+    img: 'scrnshtSG.jpg',
+    title: 'Simon Game',
+    info: 'A desktop version of the popular electronic memory skill game. The application creates a sequence sounds and lights and requires to the user to repeat the sequence. Built using jQuery to simplify the applications DOM tree traversal and event handling.',
+    info2: '',
+    url: 'https://tagabaza.github.io/Simon_Game/',
+    repo: 'https://github.com/tagabaza/Simon_Game', // if no repo, the button will not show up
+  }, 
   {
     id: nanoid(),
     img: 'screenshot5.jpg',
@@ -44,21 +53,13 @@ export const projectsData = [
     url: 'https://tagabaza.github.io/reading-list-app/',
     repo: 'https://github.com/tagabaza/reading-list-app', // if no repo, the button will not show up
   },
-  {
-    id: nanoid(),
-    img: 'scrnshtSG.jpg',
-    title: 'Simon Game',
-    info: 'A web version of the popular electronic memory skill game. The application creates a sequence sounds and lights and requires to the user to repeat the sequence. Built using jQuery to simplify the applications DOM tree traversal and event handling.',
-    info2: '',
-    url: 'https://tagabaza.github.io/Simon_Game/',
-    repo: 'https://github.com/tagabaza/Simon_Game', // if no repo, the button will not show up
-  }, 
+  
 ];
 
 // CONTACT DATA
 export const contactData = {
-  cta: '',
-  btn: '',
+  cta: 'Want to talk about a new opportunity? Have any questions?',
+  btn: 'Get In Touch!',
   email: 'tanakagabaza@gmail.com',
 };
 
