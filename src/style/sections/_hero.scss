@@ -1,45 +1,221 @@
 #hero {
-  min-height: 100vh;
   height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  // align-items: center;
   border-bottom: 0px;
-  background: $white-color;
+  background: $dark-shade;
   font-weight: 400;
-  color: $dark-blue-text;
-  padding: 0rem 5.6rem;
+  color: $light-shade;
+  // padding-top: 80px;
+  // padding-left: 5.6rem;
+  // padding-right: 5.6rem;
+  // padding-bottom: 160px;
   margin-bottom: 0;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: -1;
-
-  // If you want to set a background image on the hero section, uncomment these with yout custom image
-
-  background-image: url('/gatsby-simplefolio/src/images/project.jpg');
-  // background-position: center;
-  background-size: cover;
+  z-index: 1;
+  // text-align: start;
 
   @include respond(phone) {
-    padding: 0rem $default-font-size;
+    padding: 0rem 3.2rem;
+  }
+
+  .rows {
+    position: relative;
+    top: -50%;
+    width: 100%;
+    display: flex;
+    padding: 1rem 0;
+    white-space: nowrap;
+    font-size: 7rem;
+    transform: rotate(-30deg);
+  }
+
+  .fa-icons {
+    color: rgba(0, 0, 0, 0.5);
+    transition: 1s;
+    padding: 0 0.5rem;
+    user-select: none;
+    cursor: default;
+  }
+
+  .fa-icons:hover {
+    transition: 0s;
+    color: $main-color2;
+    box-shadow: 0 0 120px $main-color2;
+  }
+
+  .rows div {
+    animation: animate1 80s linear infinite;
+    animation-delay: -80s;
+  }
+
+  .rows div:nth-child(2) {
+    animation: animate2 80s linear infinite;
+    animation-delay: -40s;
+  }
+
+  @keyframes animate1 {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes animate2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+  .rows:nth-child(even) div {
+    animation: animate3 80s linear infinite;
+    animation-delay: -80s;
+  }
+
+  .rows:nth-child(even) div:nth-child(2) {
+    animation: animate4 80s linear infinite;
+    animation-delay: -40s;
+  }
+
+  @keyframes animate3 {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes animate4 {
+    0% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  .fa-icons1 {
+    position: absolute;
+    color: #7d9398;
+    // opacity: 0.4;
+  }
+
+  .hero-background {
+    width: 100%;
+    height: 100vh;
+    // padding: 14rem 4.6rem 11.25rem;
+    z-index: 2;
+  }
+
+  .skill-cloud {
+    position: relative;
+    font-size: 1rem;
+    height: 100%;
+    z-index: 3;
+  }
+
+  .skill-cloud p {
+    position: absolute;
+
+    // opacity: 0.4;
+  }
+
+  $size: 100px;
+
+  .x-axis,
+  .y-axis,
+  .x-axis-alt,
+  .y-axis-alt {
+    width: $size;
+    height: $size;
+  }
+
+  .x-axis {
+    animation: x 13s linear infinite alternate;
+    z-index: 10;
+    color: #2c333e;
+    position: absolute;
+    z-index: 4;
+    user-select: none;
+  }
+
+  .y-axis {
+    animation: y 7s linear infinite alternate;
+  }
+
+  .x-axis-alt {
+    animation: x1 7s linear infinite alternate;
+  }
+
+  .y-axis-alt {
+    animation: y1 7s linear infinite alternate;
+  }
+
+  @keyframes x {
+    100% {
+      transform: translateX(calc(100vw - #{$size}));
+    }
+  }
+
+  @keyframes y {
+    100% {
+      transform: translateY(calc(100vh - #{$size}));
+    }
+  }
+
+  @keyframes x1 {
+    100% {
+      transform: translateX(calc(100vw - #{$size}));
+    }
+  }
+
+  @keyframes y1 {
+    100% {
+      transform: translateY(calc(100vh - #{$size}));
+    }
+  }
+
+  .hero-container {
+    width: 77%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 20;
+    // background-color: $main-color;
+    box-shadow: 0px 0px 20px $dark-shade;
+    padding: 20px;
+    border-radius: 10px;
   }
 
   .hero-greeting {
     font-size: 2.3rem;
     text-align: center;
+    color: $light-shade;
   }
 
   .hero-title {
-    font-size: 5.6rem;
+    font-size: 10rem;
     font-weight: 700;
     text-align: center;
 
     @include respond(tab-land) {
-      font-size: 4rem;
+      font-size: 9rem;
     }
     @include respond(tab-port) {
-      font-size: 3.6rem;
+      font-size: 7rem;
     }
     @include respond(phone) {
       font-size: 3rem;
@@ -50,10 +226,11 @@
     }
 
     &-sub {
-      font-size: 5.6rem;
+      font-size: 6.5rem;
       font-weight: 700;
       margin-bottom: 3.2rem;
       text-align: center;
+      color: $light-shade;
 
       @include respond(tab-land) {
         font-size: 4rem;
@@ -85,6 +262,26 @@
       @include respond(phone) {
         font-size: 2rem;
       }
+    }
+  }
+
+  .hero-side-element {
+    width: 40px;
+    bottom: 200px;
+    left: auto;
+    right: 40px;
+    position: fixed;
+    transform: rotate(90deg);
+    background-color: hotpink;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 90px;
+      // margin: 0 auto;
+      transform: rotate(90deg);
+      background-color: greenyellow;
     }
   }
 }
