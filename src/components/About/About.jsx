@@ -5,8 +5,7 @@ import Title from '../Title/Title';
 import AboutImg from '../Image/AboutImg';
 import PortfolioContext from '../../context/context';
 import resumePDF from '../../static/resume.pdf'
-import stars from '../../images/stars.png';
-import twinkle from '../../images/twinkling2.png';
+
 
 const About = () => {
   const { about } = useContext(PortfolioContext);
@@ -27,8 +26,6 @@ const About = () => {
 
   return (
     <section id="about">
-      <div className="stars" style={{background: `repeat top center url(${stars})`}}></div>
-      <div className="twinkling" style={{background: `repeat top center transparent url(${twinkle})`}}></div>
       <Container>
         <Title title="About Me" />
         <Row className="about-wrapper">
