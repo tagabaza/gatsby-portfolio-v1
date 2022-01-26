@@ -18,5 +18,10 @@ export const MenuItems = [
         cName: 'nav-links'
 
     },
+    {
+        title: 'RESUME',
+        url: '{resume}',
+        cName: 'resumeBtnMobile cta-btn cta-btn--hero'
+    },
 ]
     
