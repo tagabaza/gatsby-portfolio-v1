@@ -18,10 +18,10 @@ export const MenuItems = [
         cName: 'nav-links'
 
     },
-    {
-        title: 'RESUME',
-        url: '{resume}',
-        cName: 'resumeBtnMobile cta-btn cta-btn--hero'
-    },
+    // {
+    //     title: 'RESUME',
+    //     url: 'static/resume-2bbbf84d55b52395231f164494200798.pdf',
+    //     cName: 'resumeBtnMobile cta-btn cta-btn--hero'
+    // },
 ]
     

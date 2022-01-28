@@ -76,4 +76,12 @@
       }
     }
   }
+
+  .aboutResumeBtn {
+    justify-content: start;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+  }
 }

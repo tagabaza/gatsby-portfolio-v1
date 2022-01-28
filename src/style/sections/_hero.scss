@@ -4,22 +4,16 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  // align-items: center;
   border-bottom: 0px;
   background: $dark-shade;
   font-weight: 400;
   color: $light-shade;
-  // padding-top: 80px;
-  // padding-left: 5.6rem;
-  // padding-right: 5.6rem;
-  // padding-bottom: 160px;
   margin-bottom: 0;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 1;
-  // text-align: start;
 
   @include respond(phone) {
     padding: 0rem 3.2rem;
@@ -27,7 +21,7 @@
 
   .rows {
     position: relative;
-    top: -50%;
+    top: -100%;
     width: 100%;
     display: flex;
     padding: 1rem 0;
@@ -106,89 +100,8 @@
     }
   }
 
-  .fa-icons1 {
-    position: absolute;
-    color: #7d9398;
-    // opacity: 0.4;
-  }
-
-  .hero-background {
-    width: 100%;
-    height: 100vh;
-    // padding: 14rem 4.6rem 11.25rem;
-    z-index: 2;
-  }
-
-  .skill-cloud {
-    position: relative;
-    font-size: 1rem;
-    height: 100%;
-    z-index: 3;
-  }
-
-  .skill-cloud p {
-    position: absolute;
-
-    // opacity: 0.4;
-  }
-
-  $size: 100px;
-
-  .x-axis,
-  .y-axis,
-  .x-axis-alt,
-  .y-axis-alt {
-    width: $size;
-    height: $size;
-  }
-
-  .x-axis {
-    animation: x 13s linear infinite alternate;
-    z-index: 10;
-    color: #2c333e;
-    position: absolute;
-    z-index: 4;
-    user-select: none;
-  }
-
-  .y-axis {
-    animation: y 7s linear infinite alternate;
-  }
-
-  .x-axis-alt {
-    animation: x1 7s linear infinite alternate;
-  }
-
-  .y-axis-alt {
-    animation: y1 7s linear infinite alternate;
-  }
-
-  @keyframes x {
-    100% {
-      transform: translateX(calc(100vw - #{$size}));
-    }
-  }
-
-  @keyframes y {
-    100% {
-      transform: translateY(calc(100vh - #{$size}));
-    }
-  }
-
-  @keyframes x1 {
-    100% {
-      transform: translateX(calc(100vw - #{$size}));
-    }
-  }
-
-  @keyframes y1 {
-    100% {
-      transform: translateY(calc(100vh - #{$size}));
-    }
-  }
-
   .hero-container {
-    width: 77%;
+    // width: 77%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -204,6 +117,10 @@
     font-size: 2.3rem;
     text-align: center;
     color: $light-shade;
+
+    @include respond(phone-xs) {
+      font-size: 1.8rem;
+    }
   }
 
   .hero-title {
@@ -218,11 +135,11 @@
       font-size: 7rem;
     }
     @include respond(phone) {
-      font-size: 3rem;
+      font-size: 5rem;
       line-height: 1.5;
     }
     @include respond(phone-xs) {
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
     &-sub {
@@ -233,13 +150,13 @@
       color: $light-shade;
 
       @include respond(tab-land) {
-        font-size: 4rem;
+        font-size: 5.5rem;
       }
       @include respond(tab-port) {
-        font-size: 3.6rem;
+        font-size: 4.4rem;
       }
       @include respond(phone) {
-        font-size: 3rem;
+        font-size: 3.6rem;
         line-height: 1.5;
       }
       @include respond(phone-xs) {

@@ -88,7 +88,9 @@ const Navigation = () => {
                                         
                                     </li> 
                                 )
-                             })}
+                            })}
+
+                        <a className="resumeBtnMobile cta-btn cta-btn--hero" href={resume} target="_blank" rel="noopener noreferrer" >RESUME</a>
                         
                     </ul>
                 </Fade>
