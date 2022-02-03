@@ -70,7 +70,7 @@ const Projects = () => {
                     </div>
                   </Fade>
                 </Col>
-                <Col className='project-image-container' xl={8} lg={12} >
+                <Col xl={8} lg={12} >
                   <Fade
                     right={isDesktop}
                     bottom={isMobile}
