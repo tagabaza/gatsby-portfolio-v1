@@ -1,5 +1,3 @@
-# Gatsby Simplefolio
-
 <h1 align="center">
   tanakagabaza.com v1
 </h1>
